@@ -1,0 +1,10 @@
+﻿  Source.cpp
+E:\PAC1\PAC1\Source.cpp(26,13): warning C4244:  аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\PAC1\PAC1\Source.cpp(38,13): warning C4244:  аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\PAC1\PAC1\Source.cpp(200,12): warning C4244:  аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\PAC1\PAC1\Source.cpp(208,13): warning C4244:  аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 119 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  PAC1.vcxproj -> E:\PAC1\x64\Release\PAC1.exe
