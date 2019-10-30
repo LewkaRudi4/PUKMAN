@@ -8,7 +8,6 @@
 
 using namespace std;
 char tmp_map[10][10];
-short trgx_counter = 0;
 char map[10][10] = {
 	"######",
 	"#   O#",
@@ -84,12 +83,8 @@ int main()
 {
 	system("cls");
 	ShowMap();
-	short x = 0;
-	short y = 0;
+	short x = 0, y = 0, a = 0, b = 0, k = 0, frame = 0, trgx_counter = 0;
 	bool running = true;
-	short a = 0, b = 0;
-
-	short k = 0;
 	while (k < 1)
 	{
 		srand((unsigned)time(NULL));
@@ -102,7 +97,6 @@ int main()
 	}
 	short ex = b;
 	short ey = a;
-	short frame = 0;
 	gotoxy(ex, ey); 
 	cout<< 'A';
 	Sleep(1000);
@@ -129,13 +123,12 @@ int main()
 					trgx_counter++;
 				}
 				cout << 'A';
-				if (map[4][1] != 'O')
+				if (map[1][4] != 'O')
 				{
-					map[4][1] = 'O';
+					map[1][4] = 'O';
 				}
 				if (trgx_counter == 3 || xx() == 0)
 				{
-					//cout << 'A';
 					break;
 				}
 				frame++;
@@ -144,7 +137,7 @@ int main()
 					break;
 			}
 			Sleep(500);
-			if (trgx_counter == 3 /*||xx()==0*/)
+			if (trgx_counter == 3)
 				break;
 			if (frame > 20)
 				break;
@@ -174,14 +167,10 @@ int main()
 			if (ex == 4 && ey == 1) {
 				running = false;
 			}
-			frame++;/*
-			if ( walk_queue.size() == 0)
-				break;*/
+			frame++;
 		}
 		if (frame > 20)
 			break;
-		/*if ( walk_queue.size() == 0)
-			break;*/
 	}
 
 	system("cls");
