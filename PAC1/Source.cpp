@@ -92,7 +92,7 @@ int main()
 	short k = 0;
 	while (k < 1)
 	{
-		srand(time(NULL));
+		srand((unsigned)time(NULL));
 		a = rand() % 4 + 1;
 		b = rand() % 4 + 1;
 		if (map[a][b] != '#' && map[a][b] != 'O' && map[a][b] != '*')
@@ -108,12 +108,10 @@ int main()
 	Sleep(1000);
 	while (running)
 	{
-		while (running) {
+		while (running || trgx_counter == 3) {
 			x = xx();
 			y = yy();
 			FindPath(ex, ey, x, y);
-
-			//trgx_counter++;
 			while (running) {
 				x = xx();
 				y = yy();
@@ -129,37 +127,36 @@ int main()
 				gotoxy(ex, ey);
 				if (map[ey][ex] == '*') {
 					trgx_counter++;
-					cout << 'A';
 				}
-				/*else if (ex != 4 && ey != 1) {
-					map[4][1] = 'O';
-				}*/
+				cout << 'A';
 				if (map[4][1] != 'O')
+				{
 					map[4][1] = 'O';
+				}
 				if (trgx_counter == 3 || xx() == 0)
 				{
-					cout << 'A';
+					//cout << 'A';
 					break;
 				}
 				frame++;
-				/*if ((ex == x && ey == y)|| walk_queue.size() == 0 ||xx()==0)
-				{
-					break;
-				}*/
 				Sleep(500);
-				if (frame > 30)
+				if (frame > 20)
 					break;
 			}
 			Sleep(500);
-			if (trgx_counter == 3 ||xx()==0)
+			if (trgx_counter == 3 /*||xx()==0*/)
 				break;
-			if (frame > 30)
+			if (frame > 20)
 				break;
 		}
+		if (frame > 20)
+			break;
+		gotoxy(ex, ey);
+		cout << ' ';
 		FindPath(ex, ey, 4, 1);
 		while (running)
 		{
-			if (frame > 30)
+			if (frame > 20)
 				break;
 			gotoxy(ex, ey); 
 			map[ey][ex] = ' ';
@@ -177,13 +174,14 @@ int main()
 			if (ex == 4 && ey == 1) {
 				running = false;
 			}
-			frame++;
+			frame++;/*
 			if ( walk_queue.size() == 0)
-				break;
+				break;*/
 		}
-		Sleep(500);
-		if ( walk_queue.size() == 0)
+		if (frame > 20)
 			break;
+		/*if ( walk_queue.size() == 0)
+			break;*/
 	}
 
 	system("cls");
@@ -200,7 +198,7 @@ void ShowMap()
 	short k = 0;
 	while (k < 4)
 	{
-		srand(time(NULL));
+		srand((unsigned)time(NULL));
 		short a = rand() % 4 + 1;
 		short b = rand() % 4 + 1;
 		if (map[a][b] != 'O' && map[a][b] != '#')
@@ -212,7 +210,7 @@ void ShowMap()
 	k = 0;
 	while (k < 3)
 	{
-		srand(time(NULL));
+		srand((unsigned)time(NULL));
 		short a = rand() % 4 + 1;
 		short b = rand() % 4 + 1;
 		if (map[a][b] != '#' && map[a][b] != 'O' && map[a][b] != '*')
@@ -229,9 +227,9 @@ void ShowMap()
 short yy()
 {
 	short k = 0;
-	for (short i = 1; i < 4; i++)
+	for (short i = 0; i < 5; i++)
 	{
-		for (short j = 1; j < 4; j++)
+		for (short j = 0; j < 5; j++)
 		{
 			if (map[i][j] == '*')
 			{
@@ -252,9 +250,9 @@ short yy()
 short xx()
 {
 	short k = 0;
-	for (short i = 1; i < 4; i++)
+	for (short i = 0; i < 5; i++)
 	{
-		for (short j = 1; j < 4; j++)
+		for (short j = 0; j < 5; j++)
 		{
 			if (map[i][j] == '*')
 			{
