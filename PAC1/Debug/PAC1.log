@@ -1,1 +1,3 @@
-﻿  PAC1.vcxproj -> D:\git\PUKMAN\Debug\PAC1.exe
+﻿  Source.cpp
+D:\git\PUKMAN\PAC1\Source.cpp(294,11): warning C4018: <: несоответствие типов со знаком и без знака
+  PAC1.vcxproj -> D:\git\PUKMAN\Debug\PAC1.exe
