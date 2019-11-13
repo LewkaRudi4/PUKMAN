@@ -1,6 +1,4 @@
 ﻿  Source.cpp
-C:\Users\Al\source\repos\PAC1\PAC1\Source.cpp(95,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Al\source\repos\PAC1\PAC1\Source.cpp(203,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Al\source\repos\PAC1\PAC1\Source.cpp(215,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\Al\source\repos\PAC1\PAC1\Source.cpp(307,11): warning C4018: <: несоответствие типов со знаком и без знака
-  PAC1.vcxproj -> C:\Users\Al\source\repos\PAC1\Debug\PAC1.exe
+D:\git\PUKMAN\PAC1\Source.cpp(294,11): warning C4018: <: несоответствие типов со знаком и без знака
+  LINK : не найден или не выполнена сборка D:\git\PUKMAN\Debug\PAC1.exe при последней инкрементной компоновке; выполняется полная компоновка
+  PAC1.vcxproj -> D:\git\PUKMAN\Debug\PAC1.exe
